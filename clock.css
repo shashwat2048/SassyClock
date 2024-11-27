@@ -1,0 +1,208 @@
+
+@font-face {
+    font-family: 'Digital-7';
+    src: url('https://fonts.cdnfonts.com/s/11671/Digital7-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navbarContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.navbarList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarList li {
+    margin: 0 15px;
+}
+
+.navbarList li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbarList li a:hover {
+    color: #00ffff; /* Cyan glow effect */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.6),
+                 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+
+
+#clockHead {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.6),
+                 0 0 40px rgba(0, 255, 255, 0.4);
+    margin-bottom: 20px;
+    letter-spacing: 0.2rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.clock-container {
+    margin-top: 100px; 
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; 
+}
+
+
+#timeContainer {
+    font-family: 'Digital-7', 'Courier New', Courier, monospace;
+    font-size: 5rem;
+    color: #ff4444; 
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.6), 
+                 0 0 40px rgba(255, 68, 68, 0.4),
+                 0 0 60px rgba(255, 68, 68, 0.2);
+    letter-spacing: 0.1rem;
+    background: #222;
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: inline-block;
+    border: 2px solid #ff4444;
+    animation: fadeIn 2s ease-in-out; 
+    animation: pulse 2s infinite;
+}
+
+#dateContainer {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #f0f0f0;
+    letter-spacing: 0.05rem;
+    font-weight: bolder;
+}
+
+
+#formatBtn {
+    margin-top: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff4444, #ff8888);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+    box-shadow: 0 0 10px rgba(255, 68, 68, 0.8),
+                0 0 20px rgba(255, 68, 68, 0.6);
+}
+
+#formatBtn:hover {
+    background: linear-gradient(45deg, #ff8888, #ff4444);
+    box-shadow: 0 0 15px rgba(255, 68, 68, 0.8),
+                0 0 30px rgba(255, 68, 68, 0.6),
+                0 0 45px rgba(255, 68, 68, 0.4);
+    transform: scale(1.1); 
+}
+
+#formatBtn:active {
+    transform: scale(0.9); 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 68, 68, 0.6),
+                    0 0 40px rgba(255, 68, 68, 0.4),
+                    0 0 60px rgba(255, 68, 68, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 68, 68, 0.8),
+                    0 0 50px rgba(255, 68, 68, 0.6),
+                    0 0 70px rgba(255, 68, 68, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    #clockHead {
+        font-size: 2.5rem;
+        letter-spacing: 0.1rem;
+    }
+
+    #timeContainer {
+        font-size: 4rem;
+        padding: 15px 20px;
+    }
+
+    #dateContainer {
+        font-size: 1.2rem;
+    }
+
+    #formatBtn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #clockHead {
+        font-size: 2rem;
+    }
+
+    #timeContainer {
+        font-size: 3.5rem;
+        padding: 10px 15px;
+    }
+
+    #dateContainer {
+        font-size: 1rem;
+    }
+
+    #formatBtn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}

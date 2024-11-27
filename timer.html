@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SassyClock - timer</title>
+    <link rel="stylesheet" href="timer.css">
+    <link rel="shortcut icon" href="clock.png" type="image/x-icon">
+</head>
+<body>
+    <nav class = "navbarContainer">
+        <ul class="navbarList">
+            <li><a href="timer.html">timer</a></li>
+            <li><a href="index.html">clock</a></li>
+            <li><a href="stopwatch.html">stop watch</a></li>
+            <li><a href="alarm.html">alarm</a></li>
+        </ul>
+    </nav>
+    <div class="timer-container">
+        <h1 id="timerHead">TIMER</h1><br><br>
+        <form action="" id="time-input-form">
+            <input type="number" id="hrs" min="0" max="99">
+            <input type="number" id="mins" min="0" max="59">
+            <input type="number" id="secs" min="0" max="59">
+            <input type="submit" id="submit-Btn">
+        </form><br><br>
+        <div id = "timerBox"></div><br><br>
+        <div class="button_div">
+            <button id="start">start</button>
+            <button id="end">end</button>
+        </div>
+    </div>
+<script src="timer.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
+    min-height: 100vh;
+    overflow-y: auto; /* Ensure vertical scrolling */
+}
+
+/* Navbar */
+.navbarContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #1a1a1a;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.navbarList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarList li {
+    margin: 0 15px;
+}
+
+.navbarList li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbarList li a:hover {
+    color: #00ffff; /* Cyan glow effect */
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.6),
+                 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+
+/* Alarm Container */
+.alarm-container {
+    margin-top: 100px;
+    padding: 20px 30px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading */
+#alarmHead {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8),
+                 0 0 20px rgba(0, 255, 255, 0.6),
+                 0 0 40px rgba(0, 255, 255, 0.4);
+}
+
+#setBtn {
+    padding: 12px 20px;
+    border: none;
+    background: #00ff80; /* Green color */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 128, 0.6);
+    transition: all 0.3s ease;
+}
+
+#setBtn:hover {
+    background: #00e064; /* Darker green on hover */
+    box-shadow: 0 0 20px rgba(0, 255, 128, 0.7);
+}
+
+
+/* Form Styling */
+#alarm-input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#alarm-input-form label {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+#alarm-input-form input[type="time"],
+#alarm-input-form input[type="text"],
+#alarm-input-form select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: cyan;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#alarm-input-form input[type="time"]:focus,
+#alarm-input-form input[type="text"]:focus,
+#alarm-input-form select:focus {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+#alarm-input-form button {
+    padding: 12px 20px;
+    border: none;
+    background: cyan;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+#alarm-input-form button:hover {
+    background: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Repeat Days */
+#repeat-days {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#repeat-days label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+}
+
+/* Alarm List */
+#alarmBox {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+#alarmBox h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#alarm-list {
+    list-style: none;
+    padding: 0;
+}
+
+.alarmCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.alarm-details {
+    text-align: left;
+}
+
+.alarm-time {
+    font-size: 1.5rem;
+    color: cyan;
+}
+
+.alarm-name {
+    font-size: 1.2rem;
+}
+
+.alarm-days {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.alarm-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alarm-controls button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.alarm-controls .delete-btn {
+    background: #ff0055;
+    color: white;
+}
+
+.alarm-controls .delete-btn:hover {
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.6);
+}
+
+.alarm-controls .stop-btn {
+    background: #00ff80;
+    color: black;
+}
+
+.alarm-controls .stop-btn:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 128, 0.6);
+}
+
+.alarm-controls .switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.alarm-controls .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.alarm-controls .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.alarm-controls .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.alarm-controls input:checked + .slider {
+    background-color: #00ff80;
+}
+
+.alarm-controls input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+/* Delete All Button */
+.delete-all {
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: none;
+    background: #ff0055;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+    transition: all 0.3s ease;
+}
+
+.delete-all:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Animation for Fade-In Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation for Glow Pulse */
+@keyframes glowPulse {
+    from {
+        text-shadow: 
+            0 0 5px cyan,
+            0 0 10px cyan,
+            0 0 20px cyan,
+            0 0 30px cyan;
+    }
+    to {
+        text-shadow: 
+            0 0 10px cyan,
+            0 0 20px cyan,
+            0 0 30px cyan,
+            0 0 40px cyan;
+    }
+}
+
+@media (max-width: 600px) {
+    .alarm-container {
+        padding: 15px;
+        margin-top: 120px;
+    }
+
+    #alarmHead {
+        font-size: 2.5rem;
+    }
+
+    #alarm-input-form {
+        gap: 8px;
+    }
+
+    #setBtn {
+        width: 100%;
+    }
+
+    .alarmCard {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .alarm-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delete-all {
+        width: 100%;
+    }
+}
